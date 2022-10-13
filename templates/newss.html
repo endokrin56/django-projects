@@ -1,0 +1,34 @@
+<!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
+{% extends 'flatpages/default.html' %}
+
+<!-- Название у нас будет Product -->
+{% block title %}
+   Новость
+{% endblock title %}
+
+<!-- В контенте на странице  выводим новость, идентификатор которой был передан в url -->
+{% block content %}
+ <h3>Текущая новость</h3>
+<table>
+           <tr>
+               <td>       Автор          </td>
+
+               <td>    </td>
+               <td>      Заголовок        </td>
+                <td>    </td>
+               <td>      Новость         </td>
+               <td>    </td>
+               <td>  Дата </td>
+           </tr>
+
+           <tr>
+               <td>{{  newss.author.authorname|truncatewords:5  }}</td>
+               <td>    </td>
+               <td>{{  newss.headPost  }}</td>
+               <td>     </td>
+               <td>{{  newss.textPost|truncatechars:20  }}</td>
+               <td>     </td>
+               <td>{{  newss.post_datetime|date:'d M Y'  }}</td>
+           </tr>
+    </table>
+{% endblock content %}
