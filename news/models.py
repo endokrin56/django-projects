@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models import Sum
+#from django.db.models import Sum
 
 #
 article = 'AR'
@@ -18,13 +18,13 @@ class Author(models.Model):
     #
     def update_rating(self):
         # post_rating = self.post_set_aggregate(postrating=Sum('rating'))
-        post_rating = self.post_set_aggregate(postrating=Sum('rating'))
+        #post_rating = 0 #self.post_set_aggregate(postrating=Sum('rating'))
         p_rat = 0
-        p_rat += post_rating.get('postrating')
+        #_rat += post_rating.get('postrating')
 
-        comment_rating = self.authorname.Comment_set_aggregate(commentrating=Sum('rating'))
+        #comment_rating = 0 #self.authorname.Comment_set_aggregate(commentrating=Sum('rating'))
         c_rat = 0
-        c_rat += comment_rating.get('commentrating')
+        #c_rat += comment_rating.get('commentrating')
 
         self.rating = p_rat*3 + c_rat
         self.save()
@@ -33,7 +33,7 @@ class Author(models.Model):
     #
     def some_method(self):
         #     pass
-        self.Author = self.full_name.split()[0]
+        self.Author = self.full_name #.split()[0]
 
 
 #
@@ -41,6 +41,8 @@ class Author(models.Model):
 class Category(models.Model):
     context = models.TextField(unique=True, blank=True)
     # pass
+    def __str__(self):
+        return f'{self.context}'
 
 class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
