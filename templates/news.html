@@ -7,12 +7,12 @@
 {% endblock title %}
 
 {% block content %}
-<<<<<<< HEAD
+
    <h1>Все новости</h1>
 
-=======
+
    <h3>Список новостей</h3>
->>>>>>> 06377a6 (Initial commit)
+
 
    <hr>
    {% if news %}
@@ -26,12 +26,6 @@
 
            {% for new in news %}
            <tr>
-<<<<<<< HEAD
-               <td>{{ new.author.authorname|truncatewords:5 }}</td>
-               <td>{{ new.headPost }}</td>
-               <td>{{ new.textPost|truncatechars:20 }}</td>
-               <td>{{ new.post_datetime }}</td>
-=======
 
                <td>{{ new.author.authorname|truncatewords:5 }}</td>
                <td>  </td>
@@ -39,10 +33,10 @@
                <td>  </td>
                <td>{{ new.textPost|truncatechars:20 }}</td>
                <td>  </td>
-               <td>{{ new.post_datetime }}</td>
+               <td>{{ new.post_datetime|date:'d M Y' }}</td>
                 <td>  </td>
                <td>{{ new.typePost }}</td>
->>>>>>> 06377a6 (Initial commit)
+
            </tr>
            {% endfor %}
 
@@ -50,8 +44,6 @@
    {% else %}
        <h2>Новостей  нет!</h2>
    {% endif %}
-<<<<<<< HEAD
-=======
 
  {# Добавляем пагинацию на страницу #}
 
@@ -76,7 +68,4 @@
        {% endif %}
    {% endif %}
 
-
-
->>>>>>> 06377a6 (Initial commit)
 {% endblock content %}
