@@ -1,5 +1,6 @@
 {% extends 'flatpages/default.html' %}
 
+{% load news_filters %}
 
 
 {% block title %}
@@ -15,29 +16,58 @@
 
 
    <hr>
+    {# Теперь будем проверять не request.user.is_authenticated, а конкретные права #}
+    {% if perms.news.add_post %}
+    <a href="{% url 'post_create' %}">Добавить новость</a>
+    {% endif %}
    {% if news %}
        <table>
            <tr>
-               <td>   Автор   </td>
-               <td>     Заголовок       </td>
+               <td>      ID         </td>
+               <td>                      </td>
+               <td>      Автор          </td>
+               <td>                      </td>
+               <td>      Заголовок       </td>
+                <td>                    </td>
                <td>      Новость        </td>
-               <td>  Дата </td>
+                <td>                    </td>
+               <td>      Дата           </td>
+                <td>                    </td>
+               <td>      Категория      </td>
+
+                {# Условие на допуск действий. #}
+                {% if perms.news.change_post or perms.news.post_product %}
+                    <td>    Действия    </td>
+                {% endif %}
            </tr>
 
            {% for new in news %}
            <tr>
-
+               <td>{{ new.id }}</td>
+               <td>  </td>
                <td>{{ new.author.authorname|truncatewords:5 }}</td>
                <td>  </td>
-               <td>{{ new.headPost }}</td>
+               <td>{{ new.headPost|censor }}</td>
                <td>  </td>
-               <td>{{ new.textPost|truncatechars:20 }}</td>
+               <td>{{ new.textPost|truncatechars:20|censor }}</td>
                <td>  </td>
                <td>{{ new.post_datetime|date:'d M Y' }}</td>
                 <td>  </td>
-               <td>{{ new.typePost }}</td>
+<!--            <td>{{   new.typePost }}</td>  -->
+               <td>{{  new.get_typePost_display }} {{  new.typePost.field.choices }}</td>
 
+               <td>
+                    {# А здесь доступ для каждой ссылки теперь будем проверять отдельно #}
+                    {% if perms.news.change_post %}
+                         <a href="{% url 'post_update' pk=new.id %}">Изменить</a>
+                    {% endif %}
+                    {% if perms.news.delete_post %}
+                         <a href="{% url 'post_delete' pk=new.id %}">Удалить</a>
+                    {% endif %}
+                </td>
            </tr>
+
+
            {% endfor %}
 
        </table>

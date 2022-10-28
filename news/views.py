@@ -3,8 +3,8 @@ from django.shortcuts import render
 #from django.views.generic import ListView, DetailView
 #from .models import Post
 
-# Create your views here.
-
+from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import ModelForm, Textarea
 from django.shortcuts import render
 from django.template.defaultfilters import pprint
@@ -15,11 +15,20 @@ from django.urls import reverse_lazy
 from django_filters import ModelChoiceFilter, DateTimeFilter
 from django.forms import DateInput
 # from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
 # def seach(request):
 #     return HttpResponse('<h1>seach</h1>')
+
+@login_required
+def show_protected_page(request):
+    # // do something protected
+    pass
+
+
 
 class PostForm(ModelForm):
 
@@ -152,9 +161,13 @@ class PostDetail(DetailView):
         context_object_name = 'newss'
 
 
-class PostCreate(CreateView):
+#class PostCreate(LoginRequiredMixin, CreateView):
+class PostCreate(PermissionRequiredMixin, CreateView):
+    permission_required = ('news.add_post',)
     # определяем форму
     form_class = PostForm
+    #  отвечает за перепосыл при ограничении доступа
+    raise_exception = True
     # Модель всё та же, но мы хотим получать информацию по отдельной новости
     model = Post
     # определяем поля
@@ -167,15 +180,19 @@ class PostCreate(CreateView):
 
     def form_valid(self, form):
         post = form.save(commit=False)
-        post.typePost = 1
+        post.typePost = 'AR'
         return super().form_valid(form)
 
     # def get_absolute_url(self):
-    #     return f'/news/{self.name}/'
+    #  self   return f'/news/{self.name}/'
 
-class PostCreate_(CreateView):
+#class PostCreate_(LoginRequiredMixin, CreateView):
+class PostCreate_(PermissionRequiredMixin, CreateView):
+    permission_required = ('news.add_post',)
     # определяем форму
     form_class = PostForm
+    #  отвечает за перепосыл при ограничении доступа
+    raise_exception = True
     # Модель всё та же, но мы хотим получать информацию по отдельной новости
     model = Post
     # определяем поля
@@ -188,16 +205,18 @@ class PostCreate_(CreateView):
 
     def form_valid(self, form):
         post = form.save(commit=False)
-        post.typePost = 2
+        post.typePost = 'NW'
         return super().form_valid(form)
 
 # Представление удаляемой новость.
-class PostDelete(DeleteView):
+class PostDelete(PermissionRequiredMixin, DeleteView):
+    permission_required = ('news.delete_post',)
     model = Post
     template_name = 'newss_delete.html'
     success_url = reverse_lazy('post_list')
 
-class PostUpdate(UpdateView):
+class PostUpdate(PermissionRequiredMixin, UpdateView):
+    permission_required = ('news.change_post',)
     form_class = PostForm
     model = Post
     template_name = 'newss_create.html'

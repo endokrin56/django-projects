@@ -3,9 +3,7 @@ from django.contrib.auth.models import User
 #from django.db.models import Sum
 
 #
-article = 'AR'
-news = 'NW'
-PostPositions = [(article, 'Статья'), (news, 'Новость')]
+
 
 
 # Create your models here.
@@ -45,6 +43,10 @@ class Category(models.Model):
         return f'{self.context}'
 
 class Post(models.Model):
+    article = 'AR'
+    news = 'NW'
+    PostPositions = [(article, 'Статья'), (news, 'Новость')]
+
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category, through='PostCategory')
     post_datetime = models.DateTimeField(auto_now_add=True)
