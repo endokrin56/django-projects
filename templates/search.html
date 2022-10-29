@@ -1,5 +1,6 @@
 {% extends 'flatpages/default.html' %}
 
+{% load news_filters %}
 
 {% block title %}
 Новости
@@ -27,21 +28,24 @@
 {% if search %}
        <table>
            <tr>
-               <td>   Автор   </td>
+               <td>       Автор         </td>
+               <td>                     </td>
                <td>     Заголовок       </td>
+               <td>                     </td>
                <td>      Новость        </td>
-               <td>  Дата </td>
+               <td>                     </td>
+               <td>       Дата          </td>
            </tr>
 
            {% for new in search %}
            <tr>
                <td>{{ new.author.authorname|truncatewords:5 }}</td>
+               <td>        </td>
+               <td>{{ new.headPost|censor }}</td>
+               <td>        </td>
+               <td>{{ new.textPost|truncatechars:20|censor }}</td>
                <td>  </td>
-               <td>{{ new.headPost }}</td>
-               <td>  </td>
-               <td>{{ new.textPost|truncatechars:20 }}</td>
-               <td>  </td>
-               <td>{{ new.post_datetime }}</td>
+               <td>{{ new.post_datetime|date:'d M Y' }}</td>
            </tr>
            {% endfor %}
 

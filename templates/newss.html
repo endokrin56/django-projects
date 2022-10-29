@@ -19,6 +19,8 @@
                <td>      Новость         </td>
                <td>    </td>
                <td>  Дата </td>
+               <td>                     </td>
+               <td>      Категория      </td>
            </tr>
 
            <tr>
@@ -29,11 +31,8 @@
                <td>{{  newss.textPost|truncatechars:20  }}</td>
                <td>     </td>
                <td>{{  newss.post_datetime|date:'d M Y'  }}</td>
-
-
-               <td>     </td>
-               <td>{{  newss.typePost  }}</td>
-
+               <td>            </td>
+              <td>{{  newss.get_typePost_display }} {{  news.typePost.field.choices }}</td>
 
            </tr>
     </table>

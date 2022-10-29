@@ -33,14 +33,28 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+     #пользователей добавляют
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+     #сообщения добавляют
     'django.contrib.messages',
+
     'django.contrib.staticfiles',
+
+    # Добавляем  для нашего приложения
     'news',
-    'django.contrib.sites',
+    'django.contrib.sites',   #настройки сайта
     'django.contrib.flatpages',
+    'django_filters',
+
+     # `allauth` обязательно нужен этот набор
+     # В данный раздел добавьте 3 обязательных приложения allauth
+     # и одно, которое отвечает за выход через Yandex
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.yandex',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +69,15 @@ MIDDLEWARE = [
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
 ]
 
+# для `allauth` Этого раздела может не быть, добавьте его в указанном виде.
+AUTHENTICATION_BACKENDS = [
+    #аутентификацию по username
+    'django.contrib.auth.backends.ModelBackend',
+    #бэкенд аутентификации
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+
 ROOT_URLCONF = 'NewsPaper.urls'
 
 TEMPLATES = [
@@ -68,6 +91,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # `allauth` обязательно нужен этот процессор
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -117,6 +142,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+#используется в случае, если данный проект управляет несколькими сайтами
 SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
@@ -132,3 +158,13 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#После входа  в приложение нас перенаправит на страницу
+LOGIN_REDIRECT_URL = "/news"
+
+# для  различных способов регистрации/авторизации
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
