@@ -4,7 +4,7 @@ from django.urls import path
 from .views import PostList, PostDetail
 
 from . import views
-from django.urls import path
+from django.urls import path, include
 # Импортируем созданное нами представление
 from .views import PostList, PostDetail, PostSearch, PostCreate, PostDelete, PostUpdate, PostList_, PostCreate_
 
@@ -30,5 +30,7 @@ urlpatterns = [
    path('articles/create/', PostCreate_.as_view(), name='articles_create'),
    path('articles/<int:pk>/delete/', PostDelete.as_view(), name='post_delete'),
    path('articles/<int:pk>/update/', PostUpdate.as_view(), name='post_update'),
+   path('appointments/', include(('appointments.urls', 'appointments'), namespace='appointments')),
+   path('accounts/', include('allauth.urls')),
 ]
 
