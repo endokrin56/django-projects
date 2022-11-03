@@ -27,5 +27,5 @@ def send_mail(title, body_text, list_mail):
 def user_signed_up_(request, user, **kwargs):
     # pass
     # user_signed_up now send email
-    send_mail('Добро пожаловать на новостной сайт' ,
+    send_mail('Добро пожаловать на новостной сайт',
               'Уважаемый %s,Ваша регистрация на  на новостном сайте прошла  успешно'% user.username, [user.email])
