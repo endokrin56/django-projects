@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Добавляем  для нашего приложения
-    'news',
+    # 'news',
     'django.contrib.sites',   #настройки сайта
     'django.contrib.flatpages',
     'django_filters',
@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 
     # надо указать не имя нашего приложения, а его конфиг, чтобы всё заработало
     'appointments.apps.AppointmentsConfig',
+    'news.apps.NewsConfig',
     # 'appointments',
     'django.core.mail',
     # 'django.contrib.sites',
@@ -207,3 +208,5 @@ APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 
 # если задача не выполняется за 25 секунд, то она автоматически снимается, можете поставить время побольше, но как правило, это сильно бьёт по производительности сервера
 APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds
+
+SITE_URL = 'http://127.0.0.1:8000'

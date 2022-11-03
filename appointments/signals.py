@@ -1,4 +1,4 @@
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_save, post_delete, m2m_changed
 from django.dispatch import receiver  # импортируем нужный декоратор
 from django.core.mail import mail_managers
 from .models import Appointment
@@ -26,3 +26,6 @@ def notify_managers_appointment_canceled(sender, instance, **kwargs):
         message=f'Запись удалена: {instance.date.strftime("%d %m %Y")}',
     )
     print(subject)
+
+
+

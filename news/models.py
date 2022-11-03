@@ -34,10 +34,11 @@ class Author(models.Model):
         self.Author = self.full_name #.split()[0]
 
 
-#
-
+# модель для подписки
 class Category(models.Model):
     context = models.TextField(unique=True, blank=True)
+    mailing = models.ManyToManyField(User, related_name='categories')
+
     # pass
     def __str__(self):
         return f'{self.context}'

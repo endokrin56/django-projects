@@ -6,8 +6,8 @@ from .views import PostList, PostDetail
 from . import views
 from django.urls import path, include
 # Импортируем созданное нами представление
-from .views import PostList, PostDetail, PostSearch, PostCreate, PostDelete, PostUpdate, PostList_, PostCreate_
-
+from .views import PostList, PostDetail, PostSearch, PostCreate, PostDelete, PostUpdate, PostList_, PostCreate_\
+ , CategoryList, mailings
 
 
 urlpatterns = [
@@ -32,5 +32,8 @@ urlpatterns = [
    path('articles/<int:pk>/update/', PostUpdate.as_view(), name='post_update'),
    path('appointments/', include(('appointments.urls', 'appointments'), namespace='appointments')),
    path('accounts/', include('allauth.urls')),
+   path('category/<int:pk>', CategoryList.as_view(), name='category_list'),
+   path('category/<int:pk>/mailing', mailings, name='mailings'),
+
 ]
 

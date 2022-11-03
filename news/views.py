@@ -23,7 +23,7 @@
 #         # Название объекта, в котором будет выбранный пользователем продукт
 #         context_object_name = 'newss'
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 # from django.views.generic import ListView, DetailView
 # from .models import Post
 
@@ -277,3 +277,37 @@ class PostUpdate(PermissionRequiredMixin, UpdateView):
 
             # Название объекта, в котором будет выбранный пользователем продукт
             context_object_name = 'newss'
+
+class CategoryList(ListView):
+    model = Post
+    # определяем поля
+    fields = '__all__'
+    # Используем  шаблон
+    template_name = 'category_list.html'
+    context_object_name = 'categorynews'
+
+    # Переопределяем функцию получения списка новостей
+    def get_queryset(self):
+        # Получаем обычный запрос
+        #queryset = super().get_queryset()
+        self.category = get_object_or_404(Category, id=self.kwargs['pk'])
+        queryset = Post.objects.filter(category=self.category).order_by('-post_datetime')
+        return  queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Добавляем в контекст объект фильтрации.
+        context['is_not_mailing'] = self.request.user not in self.category.mailing.all()
+        context['category'] = self.category
+        return context
+
+
+@login_required
+def mailings(request, pk):
+    user = request.user
+    category = Category.objects.get(id=pk)
+    category.mailing.add(user)
+    message =' Вы подписались на рассылку '
+
+    return render(request, 'mailing.html', {'category':category, 'message':message})
+

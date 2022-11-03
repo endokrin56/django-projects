@@ -1,7 +1,6 @@
 {% extends 'flatpages/default.html' %}
 
 {% load news_filters %}
-{% load static%}
 
 
 {% block title %}
@@ -21,7 +20,12 @@
     {% if perms.news.add_post %}
     <a href="{% url 'post_create' %}">Добавить новость</a>
     {% endif %}
-   {% if news %}
+
+
+   {% if categorynews %}
+{% if is_not_mailing %}
+        <p class="text-centr"><a href="{% url 'mailings' category.id %}"  class="btn btn-secondary btn-sn">Подписаться</a> </p>
+ {% endif %}
        <table>
            <tr>
                <td>      ID         </td>
@@ -44,7 +48,7 @@
           {% endif %}
            </tr>
 
-           {% for new in news %}
+           {% for new in categorynews %}
            <tr>
                <td>{{ new.id }}</td>
                <td>  </td>
@@ -59,15 +63,10 @@
 <!--            <td>{{   new.typePost }}</td>  -->
                <td>{{  new.get_typePost_display }} {{  new.typePost.field.choices }}</td>
                 <td>  </td>
-               {# <small class="fw-bold">категория#}
+
                 <td> {% for category in new.category.all %}
-                      <a href="{% url 'category_list' category.id %}">{{ category.context }}</a>
-                    {# {{ category.context }} #}
-
-
-                     {% endfor %}
-                </td>
-                {# </small>#}
+                       <a href="{% url 'category_list' category.id %}">{{ category.context }}</a>
+                     {% endfor %}  </td>
 
                <td>
                     {# А здесь доступ для каждой ссылки теперь будем проверять отдельно #}
