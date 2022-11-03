@@ -4,7 +4,7 @@ from django.core.mail import mail_managers, EmailMultiAlternatives
 from django.template.loader import render_to_string
 
 from .models import PostCategory
-# from ..NewsPaper import settings
+# from .NewsPaper import settings
 
 
 def send_mail(preview, pk, title, list_mail):

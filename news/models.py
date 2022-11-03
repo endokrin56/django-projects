@@ -70,6 +70,9 @@ class Post(models.Model):
     def preview(self):
         return self.textPost[:123] + '...'
 
+    def get_absolute_url(self):
+        return f'/news/{self.id}'
+
 
 class PostCategory(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)

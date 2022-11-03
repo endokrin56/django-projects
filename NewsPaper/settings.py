@@ -53,6 +53,7 @@ INSTALLED_APPS = [
      # и одно, которое отвечает за выход через Yandex
     'allauth',
     'allauth.account',
+    'accounts.apps.AccountsConfig',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.yandex',
 
@@ -62,6 +63,7 @@ INSTALLED_APPS = [
     # 'appointments',
     'django.core.mail',
     # 'django.contrib.sites',
+    'django_apscheduler',
 ]
 
 MIDDLEWARE = [
