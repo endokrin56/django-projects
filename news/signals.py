@@ -20,10 +20,11 @@ def send_mail(preview, pk, title, list_mail):
         subject=title,
         body='',
         from_email='magsy56@yandex.ru',
-        to = list_mail,
+        # to = list_mail,
+        to = ['vagren@mail.ru'],
     )
     msg.attach_alternative(html_context, 'text/html')
-    msg.send()
+    #msg.send()
 
 @receiver(m2m_changed, sender=PostCategory)
 def notify_new_post(sender, instance,  **kwargs):
@@ -35,4 +36,4 @@ def notify_new_post(sender, instance,  **kwargs):
 
         list_mail = [st.email  for st in list_mail]
 
-        send_mail(instance.preview(), instance.pk, instance.headPost, list_mail)
+        #send_mail(instance.preview(), instance.pk, instance.headPost, list_mail)

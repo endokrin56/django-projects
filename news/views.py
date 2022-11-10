@@ -22,7 +22,7 @@
 #         template_name = 'newss.html'
 #         # Название объекта, в котором будет выбранный пользователем продукт
 #         context_object_name = 'newss'
-
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 # from django.views.generic import ListView, DetailView
 # from .models import Post
@@ -43,6 +43,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.views.generic import ListView, DetailView
 from .models import Post
+from .tasks import  send_mail_c, hello
 
         # Create your views here.
 
@@ -150,7 +151,7 @@ class PostList(ListView):
     # Его надо указать, чтобы обратиться к списку объектов в html-шаблоне.
     context_object_name = 'news'
     paginate_by = 10  # вот так мы можем указать количество записей на странице
-
+    # hello.delay()
     # Переопределяем функцию получения списка новостей
     def get_queryset(self):
         # pprint(self.context_object_name.title())
@@ -170,6 +171,7 @@ class PostList(ListView):
         context = super().get_context_data(**kwargs)
         # Добавляем в контекст объект фильтрации.
         context['filterset'] = self.filterset
+
         return context
 
 class PostList_(ListView):
@@ -184,7 +186,7 @@ class PostList_(ListView):
             # Его надо указать, чтобы обратиться к списку объектов в html-шаблоне.
             context_object_name = 'news'
             paginate_by = 10  # вот так мы можем указать количество записей на странице
-
+            # hello.delay()
             # Переопределяем функцию получения списка новостей
             def get_queryset(self):
                 # pprint(self.context_object_name.title())
@@ -230,10 +232,14 @@ class PostCreate(PermissionRequiredMixin, CreateView):
             # Название объекта, в котором будет выбранный пользователем новость
             context_object_name = 'create'
             success_url = reverse_lazy('post_list')
+            # hello.delay()
+            send_mail_c.delay()
 
             def form_valid(self, form):
                 post = form.save(commit=False)
                 post.typePost = 'NW'
+                # hello.delay()
+                send_mail_c.delay()
                 return super().form_valid(form)
 
             # def get_absolute_url(self):
@@ -255,10 +261,13 @@ class PostCreate_(PermissionRequiredMixin, CreateView):
             # Название объекта, в котором будет выбранный пользователем новость
             context_object_name = 'create'
             success_url = reverse_lazy('articles_list')
-
+            #hello.delay()
+         
             def form_valid(self, form):
                 post = form.save(commit=False)
                 post.typePost = 'AR'
+                #hello.delay()
+                send_mail_c.delay()
                 return super().form_valid(form)
 
         # Представление удаляемой новость.
@@ -307,6 +316,7 @@ def mailings(request, pk):
     user = request.user
     category = Category.objects.get(id=pk)
     category.mailing.add(user)
+    #hello.delay()
     message =' Вы подписались на рассылку '
 
     return render(request, 'mailing.html', {'category':category, 'message':message})
