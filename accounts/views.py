@@ -3,8 +3,10 @@ from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView
 from .forms import SignUpForm
 
-# Create your views here.
+import logging
+logger_2 = logging.getLogger(__name__)
 
+# Create your views here.
 class SignUp(CreateView):
     model = User
     form_class = SignUpForm

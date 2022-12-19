@@ -1,0 +1,60 @@
+2022-12-19 19:48:17 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 19:51:08 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 19:51:14 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 19:52:14 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 19:52:19 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 19:57:14 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 19:57:18 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 19:58:47 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 19:58:52 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 19:59:13 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 19:59:18 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 19:59:52 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 19:59:58 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:01:05 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 20:01:11 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:01:46 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 20:01:53 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:04:27 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 20:04:34 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:05:21 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 20:05:28 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:05:58 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 20:06:04 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:07:28 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 20:07:34 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:08:58 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 20:09:03 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:11:21 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 20:11:27 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:13:06 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 20:13:11 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:15:18 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 20:15:23 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:18:21 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\NewsPaper\settings.py changed, reloading.
+2022-12-19 20:18:26 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:22:52 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py changed, reloading.
+2022-12-19 20:22:57 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:32:18 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\templatetags\news_filters.py changed, reloading.
+2022-12-19 20:32:23 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:37:57 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\urls.py changed, reloading.
+2022-12-19 20:38:02 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:53:59 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py changed, reloading.
+2022-12-19 20:54:04 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:54:46 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py changed, reloading.
+2022-12-19 20:54:51 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:56:47 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\urls.py changed, reloading.
+2022-12-19 20:56:52 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 20:59:48 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\urls.py changed, reloading.
+2022-12-19 20:59:53 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 21:01:39 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\urls.py changed, reloading.
+2022-12-19 21:01:44 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 21:04:47 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py changed, reloading.
+2022-12-19 21:04:54 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 21:06:23 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py changed, reloading.
+2022-12-19 21:06:28 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 21:07:59 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py changed, reloading.
+2022-12-19 21:08:07 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 21:08:34 INFO     autoreload Watching for file changes with StatReloader
+2022-12-19 21:12:05 INFO     autoreload D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py changed, reloading.
+2022-12-19 21:12:11 INFO     autoreload Watching for file changes with StatReloader

@@ -1,7 +1,8 @@
 <!--  наследуемся от шаблона default.html, который мы создавали для flatpages -->
 {% extends 'flatpages/default.html' %}
+{% load cache %} <!-- Загружаем кэширование -->
 
-<!-- Название у нас будет Product -->
+<!-- Название у нас будет Новость -->
 {% block title %}
    Новость
 {% endblock title %}
@@ -10,7 +11,10 @@
 {% block content %}
  <h3>Текущая новость</h3>
 <table>
+
+
            <tr>
+           {% cache 60 header %} <!-- Кэшируем отдельный блок на 60 секунд -->
                <td>       Автор          </td>
 
                <td>    </td>
@@ -21,6 +25,7 @@
                <td>  Дата </td>
                <td>                     </td>
                <td>      Категория      </td>
+           {% endcache %}
            </tr>
 
            <tr>

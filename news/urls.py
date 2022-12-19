@@ -9,6 +9,8 @@ from django.urls import path, include
 from .views import PostList, PostDetail, PostSearch, PostCreate, PostDelete, PostUpdate, PostList_, PostCreate_\
  , CategoryList, mailings
 
+from django.views.decorators.cache import cache_page
+
 
 urlpatterns = [
    # path — означает путь.
@@ -17,7 +19,8 @@ urlpatterns = [
    # Т.к. наше объявленное представление является классом,
    # а Django ожидает функцию, нам надо представить этот класс в виде view.
    # Для этого вызываем метод as_view.
-   path('', PostList.as_view()),
+   #path('', cache_page(100)(PostList.as_view())),
+   path('', PostList.as_view()), #
    path('<int:pk>', PostDetail.as_view()),
    path('articles/', PostList_.as_view(), name='articles_list'),
    path('news/', PostList.as_view(), name='post_list'),

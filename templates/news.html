@@ -2,10 +2,11 @@
 
 {% load news_filters %}
 {% load static%}
+{% load cache %} <!-- Загружаем кэширование -->
 
 
 {% block title %}
-Новости
+     Новости
 {% endblock title %}
 
 {% block content %}
@@ -17,32 +18,38 @@
 
 
    <hr>
+{% cache 30 header %} <!-- Кэшируем отдельный блок на 60 секунд -->
     {# Теперь будем проверять не request.user.is_authenticated, а конкретные права #}
     {% if perms.news.add_post %}
     <a href="{% url 'post_create' %}">Добавить новость</a>
     {% endif %}
+{% endcache %}
    {% if news %}
-       <table>
+      <table>
+
            <tr>
-               <td>      ID         </td>
-               <td>                      </td>
+
+               <td>      ID             </td>
+               <td>                     </td>
                <td>      Автор          </td>
-               <td>                      </td>
-               <td>      Заголовок       </td>
-                <td>                    </td>
+               <td>                     </td>
+               <td>      Заголовок      </td>
+               <td>                    </td>
                <td>      Новость        </td>
-                <td>                    </td>
+               <td>                    </td>
                <td>      Дата           </td>
-                <td>                    </td>
-               <td>      Вид      </td>
-                <td>                    </td>
+               <td>                    </td>
+               <td>      Вид            </td>
+               <td>                    </td>
                <td>      Категория      </td>
 
           {# Условие на допуск действий. #}
           {% if perms.news.change_post or perms.news.post_product %}
                <td>    Действия         </td>
           {% endif %}
+
            </tr>
+
 
            {% for new in news %}
            <tr>
@@ -69,7 +76,9 @@
                 </td>
                 {# </small>#}
 
+
                <td>
+               {% cache 60 header %} <!-- Кэшируем отдельный блок на 60 секунд -->
                     {# А здесь доступ для каждой ссылки теперь будем проверять отдельно #}
                     {% if perms.news.change_post %}
                          <a href="{% url 'post_update' pk=new.id %}">Изменить</a>
@@ -77,7 +86,9 @@
                     {% if perms.news.delete_post %}
                          <a href="{% url 'post_delete' pk=new.id %}">Удалить</a>
                     {% endif %}
+                {% endcache %}
                 </td>
+
            </tr>
 
 

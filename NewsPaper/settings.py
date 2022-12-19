@@ -75,7 +75,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
      #добавляем
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware' ,
+    # добавляем для кеширования
+    'django.middleware.cache.UpdateCacheMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
 # для `allauth` Этого раздела может не быть, добавьте его в указанном виде.
@@ -218,5 +222,130 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
+
+CACHES = {
+    'default': {
+        'TIMEOUT': 30,
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'cache_files'), # Указываем, куда будем сохранять кэшируемые файлы! Не забываем создать папку cache_files внутри папки с manage.py!
+    }
+}
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'FINFO': {
+            'format': '%(asctime)s %(levelname)-8s %(module)s %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+        'FDEBUG': {
+            'format': '%(asctime)s %(levelname)-8s %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+        'FWARNING': {
+            'format': '%(asctime)s %(pathname)-12s %(levelname)-8s %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+        'FERROR': {
+            'format': '%(asctime)s %(pathname)-12s %(levelname)-8s %(message)s %(exc_info)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+    #    'user_filter': {
+    #        '()': 'news.views.UserFilter',
+    #    },
+    },
+    'handlers': {
+        'HDEBUG': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'FDEBUG',
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            #'filters': ['user_filter'],
+        },
+        'HWARNING': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'FWARNING',
+            'level': 'WARNING',
+            'filters': ['require_debug_true'],
+        },
+        'HERROR': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'FERROR',
+            'level': 'ERROR',
+            'filters': ['require_debug_true'],
+        },
+        'HFILE': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR /'general.log',
+            'formatter': 'FINFO',
+        },
+        'HFILE_ERROR': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR /'errors.log ',
+            'formatter': 'FERROR',
+        },
+        'HFILE_SECURITY': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR /'security.log ',
+            'formatter': 'FINFO',
+        },
+        'HMAIL': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'FWARNING',
+            'filters': ['require_debug_false'],
+        }
+    },
+    'root': {
+        'handlers': ['HWARNING','HDEBUG'],
+        'level': 'DEBUG',
+        'propagate': True
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['HERROR','HFILE'],
+            'propagate': True,
+            'level': 'INFO',
+        },
+        'django.request': {
+            'handlers': ['HFILE_ERROR', 'HMAIL'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.server': {
+            'handlers': ['HFILE_ERROR', 'HMAIL'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.template': {
+            'handlers': ['HFILE_ERROR'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.db.backends': {
+            'handlers': ['HFILE_ERROR'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.security': {
+            'handlers': ['HFILE_SECURITY'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    }
+}
 
 

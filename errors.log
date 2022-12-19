@@ -1,0 +1,584 @@
+2022-12-19 20:19:47 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: / (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000001FF0E15B800>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 20:19:47 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET / HTTP/1.1" 500 122135 None
+2022-12-19 20:21:51 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000001FF0E2EAD40>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 20:21:51 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 122200 None
+2022-12-19 20:23:07 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000001EA4A1F9FC0>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 20:23:07 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 122337 None
+2022-12-19 20:32:30 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000001D22B193100>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 20:32:30 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 122337 None
+2022-12-19 20:38:09 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000002B2EE16FF00>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 20:38:09 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117635 None
+2022-12-19 20:38:48 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000002B2EE1A89C0>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 20:38:48 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117655 None
+2022-12-19 20:40:18 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000002B2EE3906C0>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 20:40:18 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117498 None
+2022-12-19 20:42:18 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000002B2EE3432C0>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 20:42:18 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117658 None
+2022-12-19 20:43:14 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /articles/news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000002B2EE301780>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 20:43:14 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /articles/news/ HTTP/1.1" 500 117915 None
+2022-12-19 20:55:06 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000001E33FEBF440>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 20:55:06 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117498 None
+2022-12-19 21:02:25 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x0000015EFCC3AE00>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 21:02:25 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117649 None
+2022-12-19 21:02:33 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x0000015EFD025B40>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 21:02:33 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117635 None
+2022-12-19 21:04:56 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000001A6E54FA140>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 184, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 21:04:56 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117635 None
+2022-12-19 21:06:34 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000001F54C144540>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 185, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 21:06:34 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117635 None
+2022-12-19 21:06:42 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000001F54C170140>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 185, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 21:06:42 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117635 None
+2022-12-19 21:08:13 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x000001F6163091C0>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 185, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 21:08:13 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117635 None
+2022-12-19 21:08:59 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x0000024294368900>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 185, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 21:08:59 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117649 None
+2022-12-19 21:09:27 C:\Users\Rabota\venv\lib\site-packages\django\utils\log.py ERROR    Internal Server Error: /news/ (<class 'TypeError'>, TypeError("object of type 'NoneType' has no len()"), <traceback object at 0x0000024294394D40>)
+Traceback (most recent call last):
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "D:\Users\Rabota\Documents\GitHub\django-projects\news\views.py", line 185, in get_context_data
+    context = super().get_context_data(**kwargs)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+  File "C:\Users\Rabota\venv\lib\site-packages\django\views\generic\list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 75, in page
+    number = self.validate_number(number)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 53, in validate_number
+    if number > self.num_pages:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 102, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+  File "C:\Users\Rabota\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Rabota\venv\lib\site-packages\django\core\paginator.py", line 97, in count
+    return len(self.object_list)
+TypeError: object of type 'NoneType' has no len()
+2022-12-19 21:09:27 C:\Users\Rabota\venv\lib\site-packages\django\core\servers\basehttp.py ERROR    "GET /news/ HTTP/1.1" 500 117658 None

@@ -45,6 +45,15 @@ from django.views.generic import ListView, DetailView
 from .models import Post
 from .tasks import  send_mail_c, hello
 
+import logging
+logger = logging.getLogger(__name__)
+
+
+# class UserFilter(logging.Filter):
+#     def filter(self, record):
+#         record.user = record.request.user_profie['fullName']
+#         return True
+
         # Create your views here.
 
         # def seach(request):
@@ -152,12 +161,18 @@ class PostList(ListView):
     context_object_name = 'news'
     paginate_by = 10  # вот так мы можем указать количество записей на странице
     # hello.delay()
+    logger.warning("Получаем обычный запрос")
+
+    logger.info("The value of id is ")
     # Переопределяем функцию получения списка новостей
+
     def get_queryset(self):
         # pprint(self.context_object_name.title())
         # Получаем обычный запрос
+        #logger.warning("Получаем обычный запрос")
         # queryset = super().get_queryset()
         queryset = Post.objects.filter(typePost='NW')
+
         # Используем наш класс фильтрации.
         # self.request.GET содержит объект QueryDict, который мы рассматривали
         # в этом юните ранее.
@@ -165,6 +180,7 @@ class PostList(ListView):
         # чтобы потом добавить в контекст и использовать в шаблоне.
         self.filterset = PostFilter(self.request.GET, queryset)
         # Возвращаем из функции отфильтрованный список товаров
+
         return self.filterset.qs
 
     def get_context_data(self, **kwargs):
@@ -299,6 +315,8 @@ class CategoryList(ListView):
     def get_queryset(self):
         # Получаем обычный запрос
         #queryset = super().get_queryset()
+
+
         self.category = get_object_or_404(Category, id=self.kwargs['pk'])
         queryset = Post.objects.filter(category=self.category).order_by('-post_datetime')
         return  queryset
